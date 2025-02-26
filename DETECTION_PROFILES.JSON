@@ -1,0 +1,5491 @@
+[
+  {
+    "detection": "additionalfilesuploadedbyactor.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 20,
+      "Unknown": 26
+    }
+  },
+  {
+    "detection": "new-cybereason-malop-detected.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "criticalseveritydetection.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 1,
+      "Process": 4,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "criticalorhighseveritydetectionsbyuser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 2,
+      "Network": 1,
+      "Process": 3,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "attacksourcesppsthreshold.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "attacksourcespercentthreshold.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "malware-detected-and-remediated.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "malware-detected-and-not-remediated.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "trend-ips-high-severity-events-detected.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "solarwinds-sunburst-process-iocs.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "potentialbuildprocesscompromisemde.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 2,
+      "Network": 0,
+      "Process": 8,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "sunspothashes.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "adfind-usage.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "solarwinds-sunburst-supernova-file-iocs.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "solarwinds-teardrop-process-iocs.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "solarwinds-sunburst-network-iocs.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "cloudflarexssprobingpattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "cloudflareunexpectedcountry.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "cloudflaremultipleuas.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "cloudflareunexpectedrequest.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "cloudflarebadclientip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "cloudflaremultipleerrorssource.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "cloudflareunexpectedurl.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "cloudflareunexpectedpost.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "cloudflarewafthreatallowed.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "cloudflareemptyua.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-reconnaissance.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "vectradetect-host-high.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-insights.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "vectradetect-account-low.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "vectradetect-highseveritydetection-lateralmovement.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-host-critical.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-exfiltration.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "vectradetect-host-low.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-botnetactivity.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "vectradetect-highseveritydetection-botnetactivity.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-account-high.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "vectradetect-newcampaign.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-commandandcontrol.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "vectradetect-highseveritydetection-commandandcontrol.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-behavior-lateralmovement.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "vectradetect-account-critical.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "vectradetect-highseveritydetection-reconnaissance.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-highseveritydetection-exfiltration.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "vectradetect-account-medium.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "vectradetect-host-medium.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "potential-account-takeover.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "successful-action-in-auth0-by-suspicious-ip-from-ti.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "spike-in-number-of-failed-auth0-logins.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "possible-risky-password-reset-followed-by-rare-operations.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "multiple-failed-logins-with-suspicious-attribute.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "password-exposure-through-curl-commandline.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "rundll32-exe-dnsrequest.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "adfsdbnamedpipeconnection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "compromised-credentials-detected-by-netskope.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "critical-administrative-actions-detected-on-netskope.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "possible-malicious-file-detected.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "user-detected-accessing-malicious-domain.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "corebackupdeletionwithsecurityalert.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 3,
+      "Host": 4,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 34
+    }
+  },
+  {
+    "detection": "solorigate-vm-network.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 1,
+      "Network": 2,
+      "Process": 5,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "a-file-with-uncommon-file-extension-was-uploaded.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 0,
+      "Network": 1,
+      "Process": 7,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "hafniumsuspiciousexchangerequestpattern.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "highfailedlogoncountbyuser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 4,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "highportcountbyclientip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 2,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "highfailedlogoncountbyclientip.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 2,
+      "Host": 4,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "supernovawebshell.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "proxyshellpwn2own.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "anomaloususeragentconnection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "timeserieskeyvaultaccessanomaly.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 33
+    }
+  },
+  {
+    "detection": "keyvaultmasssecretretrieval.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "keyvaultsensitiveoperations.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 18
+    }
+  },
+  {
+    "detection": "subscriptionmigration.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "creation-of-expensive-computes-in-azure.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "runcommanduebabreach.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 33
+    }
+  },
+  {
+    "detection": "rareoperations.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "creating-anomalous-number-of-resources-detection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "newresourcegroupsdeployedto.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "aadhybridhealthadfsservicedelete.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "aadhybridhealthadfsnewserver.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "granting-permissions-to-account-detection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 33
+    }
+  },
+  {
+    "detection": "aadhybridhealthadfssuspapp.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "recordedfutureipmalwarec2inazureactivityevents.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "threat-essentials-timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "azure-blob-public-container-access-level-modification.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "new-cloudshell-user.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "azdiagsettingsdeleted.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 0,
+      "Network": 1,
+      "Process": 2,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "multipleadmin-membership-removals-from-newadmin.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 34
+    }
+  },
+  {
+    "detection": "signinbruteforce-azureportal.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 27
+    }
+  },
+  {
+    "detection": "end-userconsentstoppedduetorisk-basedconsent.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "failedlogontoazureportal.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 7,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 27
+    }
+  },
+  {
+    "detection": "detectpimalertdisablingactivity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "insiderriskyaccessbyapplication.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "useraddedtoadminrole.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "rareapplicationconsent.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 29
+    }
+  },
+  {
+    "detection": "applicationidurichanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "bypasscondaccessrule.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 23
+    }
+  },
+  {
+    "detection": "urladdedtoapplicationfromunknowndomain.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "additionofatemporaryaccesspasstoaprivilegedaccount.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "signinpasswordspray.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 33
+    }
+  },
+  {
+    "detection": "distribpasscrackattempt.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "serviceprincipalassignedapprolewithsensitiveaccess.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 33
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationinbounddirectsettingschanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "conditionalaccesspolicymodifiedbynewuser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "firstapporserviceprincipalcredential.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "authenticationmethodchangedforprivilegedaccount.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "suspiciouslinkingofexternalidtoexistingusers.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "changestoapplicationlogouturl.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "exchangefullaccessgrantedtoapp.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "accountelevatedtonewrole.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "adminpromoafterrolemgmtapppermissiongrant.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 25
+    }
+  },
+  {
+    "detection": "threat-essentials-userassignedprivilegedrole.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "privilegeduserlogonfromnewasn.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "mfaspammingfollowedbysuccessfullogin.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "changestoapplicationownership.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "guestschangedusertypetomember.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "azureaadpowershellanomaly.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "authenticationattemptfromnewcountry.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "sign-in-burst-from-multiple-locations.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "useraccountcreatedwithoutexpectedattributesdefined.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 14,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "bulkchangestoprivilegedaccountpermissions.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "serviceprincipalauthenticationattemptfromnewcountry.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationdeleted.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "authenticationmethodschangedforprivilegedaccount.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "bruteforcecloudpc.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "serviceprincipalassignedprivilegedrole.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "suspiciousserviceprincipalcreationactivity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 23
+    }
+  },
+  {
+    "detection": "newapporserviceprincipalcredential.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "expiredaccesscredentials.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "newextusergrantedadmin.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 22
+    }
+  },
+  {
+    "detection": "anomaloususerappsigninlocationincrease-detection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "newonmicrosoftdomainadded.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "accountcreatedanddeletedinshorttimeframe.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 22
+    }
+  },
+  {
+    "detection": "suspiciousaadjoineddeviceupdate.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "accountcreateddeletedbynonapproveduser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "applicationredirecturlupdate.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "suspiciousloginfromdeletedexternalidentities.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "adfsdomaintrustmods.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "mfarejectedbyuser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationoutbounddirectsettingschanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "changestopimsettings.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "authenticationsofprivilegedaccountsoutsideofexpectedcontrols.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "multiple-mfa-failure-for-an-enduser-within-15min.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "guestusersinvitedtotenantbynewinviters.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 11,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "threat-essentials-multipleadmin-membership-removals-from-newadmin.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 29
+    }
+  },
+  {
+    "detection": "maliciousoauthapp-o365attacktoolkit.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 39
+    }
+  },
+  {
+    "detection": "credentialaddedafteradminconsent.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 22
+    }
+  },
+  {
+    "detection": "useraccounts-cablockedsigninspikes.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 15,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 44
+    }
+  },
+  {
+    "detection": "useraddedtoprivilgedgroups.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "privilegedaccountpermissionschanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "azureadrolemanagementpermissiongrant.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "adfssigninlogspasswordspray.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 11,
+      "Host": 0,
+      "Network": 8,
+      "Process": 0,
+      "Unknown": 30
+    }
+  },
+  {
+    "detection": "anomoloussinglefactorsignin.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 34
+    }
+  },
+  {
+    "detection": "userstatechangedfromguesttomember.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "maliciousoauthapp-pwnauth.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 39
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationoutboundcollaborationsettingschanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "guestaccountsaddedinaadgroupsotherthantheonesspecified.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "suspiciousoauthapp-offlineaccess.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 40
+    }
+  },
+  {
+    "detection": "mailpermissionsaddedtoapplication.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "seamlessssopasswordspray.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationadded.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "pimelevationrequestrejected.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "privlegedroleassignedoutsidepim.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "azureportalsigninfromanotherazuretenant.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 4,
+      "Host": 0,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "cross-tenantaccesssettingsorganizationinboundcollaborationsettingschanged.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "suspiciousmodificationofglobaladminproperties.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "gitlab-signinburst.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "userassignedprivilegedrole.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "brute-force-attack-against-github-account.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "accountcreatedfromnon-approvedsources.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "unusual-high-avd-session-duration-detected.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "unusual-number-of-avd-connections-detected.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "possible-suspicious-resources-added-or-updated-to-adv.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "potential-avd-account-takeover-attempts-detected.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 1,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "severaldenyactionsregistered.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 1,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "nonstandard-port-protocol-match.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "azure-firewall-port-scan.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "azure-firewall-port-sweep.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 4,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "azure-firewall-multiple-sources-affected-by-the-same-ti-destination.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "iotinternetaccess.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotunauthorizeddevice.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotplcstopcommand.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotinsecureplc.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iothighbandwidth.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotunauthorizedplcmodifications.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotmalware.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotunauthorizednetworkconfiguration.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotfirmwareupdates.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotunauthorizedremoteaccess.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotillegalfunctioncodes.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotexcessiveloginattempts.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotinosensortrafficdetected.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotdenialofservice.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iotnetworkscanning.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "correlateipc-unfamiliar-atypical.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 28,
+      "Host": 0,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 35
+    }
+  },
+  {
+    "detection": "maliciouswafsessions.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "appgwwaf-sqlidetection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "afd-waf-path-traversal-attack.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "app-gw-waf-code-injection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 18
+    }
+  },
+  {
+    "detection": "afd-premium-waf-xssdetection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "afd-premium-waf-sqlidetection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "afd-waf-code-injection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "azurewafmatching-log4j-vuln.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "appgwwaf-xssdetection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "app-gw-waf-scanner-detection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 18
+    }
+  },
+  {
+    "detection": "app-gw-waf-path-traversal-attack.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 18
+    }
+  },
+  {
+    "detection": "detection-hotwordsoutgoingstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "detection-hotwordsfirewallrulestatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "detection-errorscredentialstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "detection-errorssyntaxstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "ipentity-azuresql.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "detection-hotwordsoleobjectstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "detection-volumeresponserowsstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "suspicious-db-connection-to-azure-sql.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "detection-errorsfirewallstatefulanomalyondatabase.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "ocidiscoveryactivity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "ocimultipleinstancesterminated.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "ocimultiplerejects.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "ociunexpecteduseragent.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "ocisshscan.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "ocimultipleinstanceslaunched.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "ocieventruledeleted.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "ociinboundsshconnection.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "ociinsecuremetadataendpoint.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "ocimetadataendpointipaccess.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gcp-iam-detects-accounts-manipulation-performed.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "gcp-detect-compute-insert-spike.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gcp-detect-cloud-enumeration-attempts.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gworkspace-privileged-access-role-modified.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gworkspace-user-added-or-removed-from-role.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gworkspace-mass-user-deletion-detected.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "gworkspace-mass-data-exfiltration-detected.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "aws-logtampering.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aws-consolelogonwithoutmfa.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacrudkmspolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-createdec2policytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationadministratoraccessmanagedpolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "suspicious-actor-detected-on-aws-elb.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "aws-s3bruteforce.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 16,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacruddynamodb.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationadminmanagedpolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-ecrimagescanningdisabled.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "aws-createdcrudiamtoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "suspicious-ip-with-allowed-requests-in-aws-waf.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "aws-suspiciouscommandec2.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviagluepolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-createdcruds3policytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-setdefaulypolicyversion.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-createdlambdapolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-s3bucketexposedviapolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationvialambdapolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-ecrcontainerhigh.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "suspiciousaccessofbecrelateddocumentsinawss3buckets.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "aws-ingressegresssecuritygroupchange.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-changetordsdatabase.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 11,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-createddatapipelinepolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-samlupdateidentity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-createdcrudkmspolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-rdsinstancepubliclyexposed.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-createdgluepolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-createdcurdlambdapolicytoprivilegescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-securityhub.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "aws-fulladminpolicyattachedtorolesusersgroups.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 13,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacloudformationpolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacrudlambdapolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationfullaccessmanagedpolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-creationofencryptkeyswithoutmfa.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviassm.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-s3bucketexposedviaacl.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "aws-route53maliciousquery.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "aws-clearstopchangetraillogs.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacrudiampolicy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-changetovpc.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 10,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aws-s3ransomware.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "aws-guarddutydisabled.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-loadbalancersecgroupchange.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "aws-createdcruddyanmodbpolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-s3objectpubliclyexposed.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "awsvpc-external-ip-to-suspicious-port-activity.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviacruds3policy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-networkaclopentoallports.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "malicious-requests-detected-on-aws-elb.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-ssmpubliclyexposed.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviadatapipeline.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-privilegeescalationviaec2policy.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "aws-createdcloudformationpolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "aws-createdssmpolicytoprivilegeescalation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 12,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "awsvpc-network-traffic-flow.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aws-s3bucketaccesspointexposed.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "aws-overlypermessivekms.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aws-apifromtor.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-config-notification-delivery-failed.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "change-is-non-compliant-with-aws-config-rule.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "dynamodb-deletetable.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "aws-guardduty-template.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "successful-action-detected-on-eks-from-a-potentially-malicious-ip-caller.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "detect-unauthorized-access-attempts-in-kubernetes.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "kubernetes-detect-privileged.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "ms17010-exploitation-attempts-detection.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "zscaler-lowvolumedomainrequests.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "ciscoasa-threatdetectionmessage.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "ciscoasa-avgattackdetectrateincrease.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 47
+    }
+  },
+  {
+    "detection": "paloalto-portscanning.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 3,
+      "Host": 1,
+      "Network": 7,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "filehashentity-covid19-commonsecuritylog.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "paloalto-potential-beaconing.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 31
+    }
+  },
+  {
+    "detection": "dns-miners.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 48
+    }
+  },
+  {
+    "detection": "dns-highreversednscount-detection.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "dns-torproxies.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "fortinet-networkbeaconpattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 35
+    }
+  },
+  {
+    "detection": "omi-vulnerability-detection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "detected-significant-ingestion-decrease.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "potential-data-source-stopped-sending-logs.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "detected-duplication-of-logs-in-aadnoninteractiveusersigninlogs.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "detected-potential-anomaly-in-volume-of-logs-ingested.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "linux-ssh-failed-login-attempts-followed-by-successful-login.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "ssh-potentialbruteforce.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "abnormalcrontabaction.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "failedlogonattempts-unknownuser.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 8,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "ssh-newlyinternetexposed.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "nginxknownmaliciousreferrer.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxrequesttosensitivefiles.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxcoredump.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "nginxcommandsinrequest.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxmultipleservererrorsfromsingleip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "nginxknownmalicioususeragent.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxdifferentuasfromsingleip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "nginxknownmaliciousips.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "nginxprivateipinurl.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxsstipattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxputandgetfilefromsameip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "nginxcrlfpattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxsqlpattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "nginxmultipleclienterrorsfromsingleip.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "nginxssrfpattern.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "mail-redirect-via-exo-transport-rule.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "threat-essentials-mail-redirect-via-exo-transport-rule.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "malicious-inbox-rule.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "strontiumcredharvesting.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "rareofficeoperations.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "office-policytampering.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "multipleteamsdeletes.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "bec-mailboxrule.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "multipleusersemailforwardedtosamedestination.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "unusual-volume-of-file-deletion-custom-correlation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "externaluseraddedremovedinteams.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 11,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "office-mailforwarding.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "external-user-added-to-team-and-immediately-uploads-file.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 0,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "strontiumoct292020iocs.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "office-uploaded-executables.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 11,
+      "Host": 0,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "exchange-auditlogdisabled.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "mailitemsaccessedtimeseries.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "manganese-vpn-iocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 0,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "dev-0270registryiocsep2022.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 4,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "registrypersistenceviaappcertdllmodification.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "aadhealthmonagentregkeyaccess.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 13,
+      "Host": 6,
+      "Network": 0,
+      "Process": 14,
+      "Unknown": 37
+    }
+  },
+  {
+    "detection": "credentialdumpingtoolsfileartifacts.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "fakecomputeraccountcreated.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "dev-0270powershellsep2022.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 5,
+      "Host": 4,
+      "Network": 0,
+      "Process": 7,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "adfsremoteauthsyncconnection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 2,
+      "Host": 3,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "accessibilityfeaturesmodification.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 4,
+      "Host": 3,
+      "Network": 0,
+      "Process": 7,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "macroinvokingshellbrowserwindowcomobjects.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 4,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "potenialresourcebasedconstraineddelegationabuse.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "potentialmercury-webshell.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 4,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "chiacryptomining-windowsevent.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 9,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "potentialremotedesktoptunneling.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 1,
+      "Host": 2,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "certifiedpreowned-backup-key-1.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "dsrmaccountabuse.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "adfsremotehttpnetworkconnection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 1,
+      "Process": 2,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "adfsabnormalenhancedkeyusageattribute-oid.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "aadhealthsvcagentregkeyaccess.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 13,
+      "Host": 6,
+      "Network": 0,
+      "Process": 14,
+      "Unknown": 37
+    }
+  },
+  {
+    "detection": "registrypersistenceviaappint-dllsmodification.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "dev-0270newusersep2022.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 4,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "eatonunautorizedlogins.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "windowsbinariesexecutedfromnon-defaultdirectory.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 2,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "dumpinglsassprocessintoafile.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "certifiedpreowned-backup-key-2.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "credentialdumpingserviceinstallation.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 1,
+      "Host": 2,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "powershell-mercury.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "userprincipalnameassignedtouseraccount.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "dev-0270wmicdiscoverysep2022.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 4,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "suspected-pakistani-actor-reverserat-apparatus.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "comeventsystemloadingnewdll.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 24
+    }
+  },
+  {
+    "detection": "windowsbinarieslolbinsrenamed.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 5,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "lateralmovementviadcom.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 4,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "gaincodeexecutionadfsviawmi.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 4,
+      "Network": 0,
+      "Process": 2,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "excessivesharepermissions.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "sourgum-ioc-windowsevent.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 4,
+      "Host": 3,
+      "Network": 0,
+      "Process": 7,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "wdigestdowngradeattack.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "adminsdholder-modifications.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 2,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "europiumunusualidentity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 2,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "certifiedpreowned-tgts-requested.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "nondcactivedirectoryreplication.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "detected-user-accessing-multiple-secrets.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "multiple-failed-authentication-attempts-to-success.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "file-with-unusual-file-ext-uploaded.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 24,
+      "Host": 7,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "ipentity-azureactivity.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "rdp-multipleconnectionsfromsinglesystem.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 8,
+      "Host": 9,
+      "Network": 4,
+      "Process": 4,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "dev-0586-jan2022-ioc.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 14,
+      "Host": 9,
+      "Network": 2,
+      "Process": 26,
+      "Unknown": 31
+    }
+  },
+  {
+    "detection": "signinfirewallcorrelation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "iridiumiocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 7,
+      "Host": 7,
+      "Network": 18,
+      "Process": 0,
+      "Unknown": 30
+    }
+  },
+  {
+    "detection": "emailaccessviaactivesync.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 17,
+      "Host": 9,
+      "Network": 0,
+      "Process": 15,
+      "Unknown": 22
+    }
+  },
+  {
+    "detection": "multivendor-possibledgacontacts.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "possiblephishingwithcsl-networksession.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 3,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 23
+    }
+  },
+  {
+    "detection": "emailentity-azureactivity.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "bariumdomainioc112020.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 4,
+      "Network": 8,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 13,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 46
+    }
+  },
+  {
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 18,
+      "Host": 6,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 18
+    }
+  },
+  {
+    "detection": "useraccountaddedtoprivlegegroup-1h.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 15,
+      "Host": 4,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 24
+    }
+  },
+  {
+    "detection": "ipentity-officeactivity.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 27
+    }
+  },
+  {
+    "detection": "potentialbuildprocesscompromise.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 6,
+      "Host": 4,
+      "Network": 0,
+      "Process": 22,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "solorigatenamedpipe.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "excessivehttpfailuresfromsource.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "groupcreatedaddedtoprivlegegroup-1h.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 8,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "nobelium-iocsmay2021.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 9,
+      "Host": 10,
+      "Network": 13,
+      "Process": 10,
+      "Unknown": 31
+    }
+  },
+  {
+    "detection": "password-not-set.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 5,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 10
+    }
+  },
+  {
+    "detection": "nobelium-suspiciousscriptregistrywrite.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 8,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "rareruncommandpowershellscript.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 0,
+      "Network": 4,
+      "Process": 23,
+      "Unknown": 51
+    }
+  },
+  {
+    "detection": "rdp-rareconnection.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 8,
+      "Host": 2,
+      "Network": 2,
+      "Process": 1,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "hafniumumservicesuspiciousfile.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "bariumipioc112020.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 7,
+      "Host": 9,
+      "Network": 20,
+      "Process": 0,
+      "Unknown": 32
+    }
+  },
+  {
+    "detection": "urlentity-officeactivity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 1,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "hostaadcorrelation.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "emailentity-securityevent.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "potentialkerberoast.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 12
+    }
+  },
+  {
+    "detection": "ipentity-signinlogs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 0,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 30
+    }
+  },
+  {
+    "detection": "possiblebeaconingactivity.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "rdp-nesting.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 3,
+      "Host": 7,
+      "Network": 5,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "dev-0322-solarwinds-serv-u-ioc.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 28,
+      "Host": 20,
+      "Network": 21,
+      "Process": 56,
+      "Unknown": 122
+    }
+  },
+  {
+    "detection": "base64-encoded-pefile.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 3,
+      "Network": 0,
+      "Process": 4,
+      "Unknown": 6
+    }
+  },
+  {
+    "detection": "emailentity-securityalert.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 22
+    }
+  },
+  {
+    "detection": "networkendpointcorrelation.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 1,
+      "Host": 1,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "mshtmlvuln.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 4,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "urlentity-syslog.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "ceriumoct292020iocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 2,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 17,
+      "Host": 7,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 28
+    }
+  },
+  {
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 3,
+      "Network": 1,
+      "Process": 1,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "filehashentity-commonsecuritylog.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 1,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "adfs-dkm-masterkey-export.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 7,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "log4j-detection.yaml",
+    "classification": {
+      "Overall": "Unknown",
+      "User": 0,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "zincjan272021iocs.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 14,
+      "Host": 19,
+      "Network": 17,
+      "Process": 16,
+      "Unknown": 38
+    }
+  },
+  {
+    "detection": "solorigate-network-beacon.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 2,
+      "Network": 7,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "ipentity-awscloudtrail.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 17
+    }
+  },
+  {
+    "detection": "log4j-ipioc-dec112021.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 16,
+      "Host": 11,
+      "Network": 7,
+      "Process": 0,
+      "Unknown": 79
+    }
+  },
+  {
+    "detection": "password-never-expires.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 9,
+      "Host": 4,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "awsconsoleaadcorrelation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 3
+    }
+  },
+  {
+    "detection": "timeseriesanomaly-processexecutions.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 4,
+      "Host": 4,
+      "Network": 0,
+      "Process": 8,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "urlentity-securityalerts.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "poloniumipioc.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 8,
+      "Host": 7,
+      "Network": 20,
+      "Process": 0,
+      "Unknown": 27
+    }
+  },
+  {
+    "detection": "wslmalwarecorrelation.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 19,
+      "Host": 11,
+      "Network": 8,
+      "Process": 38,
+      "Unknown": 50
+    }
+  },
+  {
+    "detection": "anomalousipusagefollowedbyteamsaction.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "aadhostlogincorrelation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 13,
+      "Host": 6,
+      "Network": 5,
+      "Process": 4,
+      "Unknown": 25
+    }
+  },
+  {
+    "detection": "ipentity-vmconnection.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 19
+    }
+  },
+  {
+    "detection": "hafniumnewumservicechildprocess.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 2,
+      "Network": 2,
+      "Process": 4,
+      "Unknown": 2
+    }
+  },
+  {
+    "detection": "exchangeservervulnerabilitiesmarch2021iocs.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 8,
+      "Host": 12,
+      "Network": 11,
+      "Process": 1,
+      "Unknown": 36
+    }
+  },
+  {
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 90
+    }
+  },
+  {
+    "detection": "zincoct292020iocs.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 2,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 4
+    }
+  },
+  {
+    "detection": "exchangeoabvirtualdirectoryattributecontainingpotentialwebshell.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "domainentity-paloalto.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 1,
+      "Network": 6,
+      "Process": 0,
+      "Unknown": 29
+    }
+  },
+  {
+    "detection": "urlentity-auditlogs.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "galliumiocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 3,
+      "Host": 3,
+      "Network": 7,
+      "Process": 0,
+      "Unknown": 8
+    }
+  },
+  {
+    "detection": "timeseriesanomaly-multivendor-networktraffic.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 4,
+      "Process": 0,
+      "Unknown": 46
+    }
+  },
+  {
+    "detection": "useragentsearch-log4j.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 5,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 34
+    }
+  },
+  {
+    "detection": "nobelium-domainiocsmarch2021.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 6,
+      "Network": 10,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "auditpolicymanipulation-using-auditpol.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 13,
+      "Host": 2,
+      "Network": 0,
+      "Process": 8,
+      "Unknown": 26
+    }
+  },
+  {
+    "detection": "multiplefailedfollowedbysuccess.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 3,
+      "Host": 4,
+      "Network": 3,
+      "Process": 0,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "hiveransomwarejuly2022.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 15,
+      "Host": 7,
+      "Network": 2,
+      "Process": 38,
+      "Unknown": 44
+    }
+  },
+  {
+    "detection": "thalliumiocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 2,
+      "Host": 2,
+      "Network": 7,
+      "Process": 0,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "dev-0530-july2022.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 22,
+      "Host": 12,
+      "Network": 16,
+      "Process": 36,
+      "Unknown": 57
+    }
+  },
+  {
+    "detection": "nobelium-suspiciousrundll32exec.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 7,
+      "Host": 4,
+      "Network": 0,
+      "Process": 13,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "zincoctober2022-ip-domain-hash-ioc.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 21,
+      "Host": 14,
+      "Network": 10,
+      "Process": 41,
+      "Unknown": 101
+    }
+  },
+  {
+    "detection": "malware-in-recyclebin.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 6,
+      "Host": 4,
+      "Network": 0,
+      "Process": 10,
+      "Unknown": 5
+    }
+  },
+  {
+    "detection": "aad-pavpn-correlation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 1,
+      "Network": 1,
+      "Process": 1,
+      "Unknown": 15
+    }
+  },
+  {
+    "detection": "networkportsweepfromexternalnetwork.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 0,
+      "Host": 0,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 0
+    }
+  },
+  {
+    "detection": "tarraskhashioc.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 15,
+      "Host": 7,
+      "Network": 2,
+      "Process": 38,
+      "Unknown": 44
+    }
+  },
+  {
+    "detection": "mfadisable.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 0,
+      "Network": 2,
+      "Process": 1,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "phosphorusmarch2019iocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 1,
+      "Host": 3,
+      "Network": 10,
+      "Process": 0,
+      "Unknown": 23
+    }
+  },
+  {
+    "detection": "securityserviceregistryaclmodification.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 14,
+      "Host": 8,
+      "Network": 0,
+      "Process": 20,
+      "Unknown": 43
+    }
+  },
+  {
+    "detection": "emailentity-paloalto.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 2,
+      "Host": 0,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 16
+    }
+  },
+  {
+    "detection": "strontiumjuly2019iocs.yaml",
+    "classification": {
+      "Overall": "Network",
+      "User": 3,
+      "Host": 2,
+      "Network": 8,
+      "Process": 0,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "emailentity-signinlogs.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 2,
+      "Process": 2,
+      "Unknown": 36
+    }
+  },
+  {
+    "detection": "sunspotlogfile.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 1
+    }
+  },
+  {
+    "detection": "useraccountadd-removed.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 25,
+      "Host": 4,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 9
+    }
+  },
+  {
+    "detection": "gaincodeexecutionadfsviasmb.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "aadawsconsolecorrelation.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 0,
+      "Network": 2,
+      "Process": 0,
+      "Unknown": 11
+    }
+  },
+  {
+    "detection": "urlentity-paloalto.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 0,
+      "Host": 1,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 21
+    }
+  },
+  {
+    "detection": "filehashentity-securityevent.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 0,
+      "Host": 1,
+      "Network": 0,
+      "Process": 4,
+      "Unknown": 20
+    }
+  },
+  {
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 18,
+      "Host": 7,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 27
+    }
+  },
+  {
+    "detection": "execute-base64-decodedpayload.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 7,
+      "Host": 4,
+      "Network": 0,
+      "Process": 12,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 2,
+      "Host": 7,
+      "Network": 0,
+      "Process": 3,
+      "Unknown": 26
+    }
+  },
+  {
+    "detection": "startstophealthservice.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 4,
+      "Host": 3,
+      "Network": 1,
+      "Process": 0,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "securityeventlogcleared.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 3,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 14
+    }
+  },
+  {
+    "detection": "powershell-empire.yaml",
+    "classification": {
+      "Overall": "Process",
+      "User": 3,
+      "Host": 4,
+      "Network": 0,
+      "Process": 22,
+      "Unknown": 7
+    }
+  },
+  {
+    "detection": "excessivelogonfailures.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 6,
+      "Host": 5,
+      "Network": 4,
+      "Process": 2,
+      "Unknown": 30
+    }
+  },
+  {
+    "detection": "solorigate-defender-detections.yaml",
+    "classification": {
+      "Overall": "Host",
+      "User": 1,
+      "Host": 2,
+      "Network": 0,
+      "Process": 0,
+      "Unknown": 13
+    }
+  },
+  {
+    "detection": "emailentity-officeactivity.yaml",
+    "classification": {
+      "Overall": "User",
+      "User": 3,
+      "Host": 0,
+      "Network": 1,
+      "Process": 2,
+      "Unknown": 24
+    }
+  }
+]

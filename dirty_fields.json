@@ -1,0 +1,2204 @@
+[
+  {
+    "type": "SUMMARY",
+    "line": "| summarize PPS = 1000 * count() by destPublicIpAddress_s, sec = bin(TimeGenerated, 1s), sourcePublicIpAddress_s",
+    "detection": "attacksourcesppsthreshold.yaml",
+    "field": "sec = bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize PPS = 1000 * count() by destPublicIpAddress_s, sec = bin(TimeGenerated, 1s), sourcePublicIpAddress_s",
+    "detection": "attacksourcesppsthreshold.yaml",
+    "field": "1s)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize rows_count = count() by destPublicIpAddress_s, sourcePublicIpAddress_s;",
+    "detection": "attacksourcespercentthreshold.yaml",
+    "field": "sourcepublicipaddress_s;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize rows_total = count() by destPublicIpAddress_s;",
+    "detection": "attacksourcespercentthreshold.yaml",
+    "field": "destpublicipaddress_s;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by BuildParentProcess=InitiatingProcessFileName, BuildProcess=FileName, BuildAccount = AccountName, DeviceName, BuildCommand=ProcessCommandLine,",
+    "detection": "potentialbuildprocesscompromisemde.yaml",
+    "field": "by buildparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by FileEditParentProcess=InitiatingProcessParentFileName, FileEditAccount = InitiatingProcessAccountName, FileEditDomain = InitiatingProcessAccountDomain, FileEditUpn = InitiatingProcessAccountUpn,",
+    "detection": "potentialbuildprocesscompromisemde.yaml",
+    "field": "by fileeditparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize d_ua = dcount(HttpUserAgentOriginal) by SrcIpAddr, bin(TimeGenerated, 3m)",
+    "detection": "cloudflaremultipleuas.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize d_ua = dcount(HttpUserAgentOriginal) by SrcIpAddr, bin(TimeGenerated, 3m)",
+    "detection": "cloudflaremultipleuas.yaml",
+    "field": "3m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize err_cnt = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "cloudflaremultipleerrorssource.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize err_cnt = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "cloudflaremultipleerrorssource.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "    | extend session_start_time = row_window_session(date_t, 30m, 30m, user_id_s != prev(user_id_s))",
+    "detection": "potential-account-takeover.yaml",
+    "field": "user_id_s !"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project FileHashValue;",
+    "detection": "possible-malicious-file-detected.yaml",
+    "field": "filehashvalue;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project DomainName;",
+    "detection": "user-detected-accessing-malicious-domain.yaml",
+    "field": "domainname;"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend UserName = iff(isnotempty(tostring(Extprop[\"User Name\"])), tostring(Extprop[\"User Name\"]), iff(tostring(parse_json(Entities).Type) == 'account', tostring(parse_json(Entities).Name), ''))",
+    "detection": "corebackupdeletionwithsecurityalert.yaml",
+    "field": "iff(tostring(parse_json(entities).type)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize timestamp = arg_max(TimeGenerated, *) by AlertName, tostring(HostName)",
+    "detection": "corebackupdeletionwithsecurityalert.yaml",
+    "field": "tostring(hostname)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project timestamp, AlertName, UserName, NTDomain, tostring(HostName), DnsDomain, IpAddress",
+    "detection": "corebackupdeletionwithsecurityalert.yaml",
+    "field": "tostring(hostname)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize TimeGenerated = arg_min(TimeGenerated, *), requests = count() by IPCustomEntity, DNSName = tostring(DNSName), AgentId, Machine, Process;",
+    "detection": "solorigate-vm-network.yaml",
+    "field": "dnsname = tostring(dnsname)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize TimeGenerated = arg_min(TimeGenerated, *), requests = count() by IPCustomEntity, DNSName = tostring(DNSName), AgentId, Machine, Process;",
+    "detection": "solorigate-vm-network.yaml",
+    "field": "process;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project HostCustomEntity = HostName, AzureResourceId = _ResourceId, AgentId, Machine;",
+    "detection": "solorigate-vm-network.yaml",
+    "field": "machine;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(decodedUriQuery), makeset(cIP), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), FailedConnectionsCount = count() by bin(TimeGenerated, timeBin), csUserName, Computer, sIP",
+    "detection": "highfailedlogoncountbyuser.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(decodedUriQuery), makeset(cIP), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), FailedConnectionsCount = count() by bin(TimeGenerated, timeBin), csUserName, Computer, sIP",
+    "detection": "highfailedlogoncountbyuser.yaml",
+    "field": "timebin)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(sPort), makeset(decodedUriQuery), makeset(csUserName), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), ConnectionsCount = count() by bin(TimeGenerated, timeBin), cIP, Computer, sIP",
+    "detection": "highportcountbyclientip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(sPort), makeset(decodedUriQuery), makeset(csUserName), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), ConnectionsCount = count() by bin(TimeGenerated, timeBin), cIP, Computer, sIP",
+    "detection": "highportcountbyclientip.yaml",
+    "field": "timebin)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(decodedUriQuery), makeset(csUserName), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), FailedConnectionsCount = count() by bin(TimeGenerated, timeBin), cIP, Computer, sIP",
+    "detection": "highfailedlogoncountbyclientip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(decodedUriQuery), makeset(csUserName), makeset(sSiteName), makeset(sPort), makeset(csUserAgent), makeset(csMethod), makeset(csUriQuery), makeset(scStatusFull), makeset(scStatusFull_Friendly), makeset(scWin32Status_Hex), makeset(scWin32Status_Friendly), FailedConnectionsCount = count() by bin(TimeGenerated, timeBin), cIP, Computer, sIP",
+    "detection": "highfailedlogoncountbyclientip.yaml",
+    "field": "timebin)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(HourlyCount, scorethreshold, -1, 'linefit')",
+    "detection": "timeserieskeyvaultaccessanomaly.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project CallerIPAddress, AnomalyHour, TimeGenerated, HourlyCount, baseline, anomalies, score;",
+    "detection": "timeserieskeyvaultaccessanomaly.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize PerOperationCount=count(), LatestAnomalyTime = arg_max(TimeGenerated,*) by bin(TimeGenerated,1h), Resource, OperationName, id_s, CallerIPAddress, identity_claim_http_schemas_microsoft_com_identity_claims_objectidentifier_g, identity_claim_oid_g, requestUri_s, clientInfo_s",
+    "detection": "timeserieskeyvaultaccessanomaly.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize PerOperationCount=count(), LatestAnomalyTime = arg_max(TimeGenerated,*) by bin(TimeGenerated,1h), Resource, OperationName, id_s, CallerIPAddress, identity_claim_http_schemas_microsoft_com_identity_claims_objectidentifier_g, identity_claim_oid_g, requestUri_s, clientInfo_s",
+    "detection": "timeserieskeyvaultaccessanomaly.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, OperationNameValue, bin(TimeGenerated,1d)",
+    "detection": "rareoperations.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, OperationNameValue, bin(TimeGenerated,1d)",
+    "detection": "rareoperations.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, 3, -1, 'linefit')",
+    "detection": "creating-anomalous-number-of-resources-detection.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize make_set(OperationNameValue,100), make_set(_ResourceId,100), make_set(CallerIpAddress,100) by bin(TimeGenerated, timeframe), Caller",
+    "detection": "creating-anomalous-number-of-resources-detection.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize make_set(OperationNameValue,100), make_set(_ResourceId,100), make_set(CallerIpAddress,100) by bin(TimeGenerated, timeframe), Caller",
+    "detection": "creating-anomalous-number-of-resources-detection.yaml",
+    "field": "timeframe)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, OperationNameValue, bin(TimeGenerated,1d)",
+    "detection": "newresourcegroupsdeployedto.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, OperationNameValue, bin(TimeGenerated,1d)",
+    "detection": "newresourcegroupsdeployedto.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, 3, -1, 'linefit')",
+    "detection": "timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue,100), make_set(_ResourceId,100) by bin(TimeGenerated, timeframe), Caller ) on TimeGenerated, Caller",
+    "detection": "timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue,100), make_set(_ResourceId,100) by bin(TimeGenerated, timeframe), Caller ) on TimeGenerated, Caller",
+    "detection": "timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "timeframe)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue,100), make_set(_ResourceId,100) by bin(TimeGenerated, timeframe), Caller ) on TimeGenerated, Caller",
+    "detection": "timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "caller ) on timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, bin(TimeGenerated, 1d)",
+    "detection": "granting-permissions-to-account-detection.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by CallerIpAddress, Caller, bin(TimeGenerated, 1d)",
+    "detection": "granting-permissions-to-account-detection.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, 3, -1, 'linefit')",
+    "detection": "threat-essentials-timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue), make_set(Resource) by bin(TimeGenerated, 1h), Caller) on TimeGenerated, Caller",
+    "detection": "threat-essentials-timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue), make_set(Resource) by bin(TimeGenerated, 1h), Caller) on TimeGenerated, Caller",
+    "detection": "threat-essentials-timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), make_set(OperationNameValue), make_set(Resource) by bin(TimeGenerated, 1h), Caller) on TimeGenerated, Caller",
+    "detection": "threat-essentials-timeseriesanomaly-mass-cloud-resource-deletions.yaml",
+    "field": "caller) on timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by TimeKey, Caller, ResourceGroup, SubscriptionId, TenantId, AzureIP, UserIP, HTTPRequest, Type, Properties, CategoryValue, OperationList = strcat(OperationNameValue, ' , ', OperationNameValue1)",
+    "detection": "new-cloudshell-user.yaml",
+    "field": "operationlist = strcat(operationnamevalue"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by TimeKey, Caller, ResourceGroup, SubscriptionId, TenantId, AzureIP, UserIP, HTTPRequest, Type, Properties, CategoryValue, OperationList = strcat(OperationNameValue, ' , ', OperationNameValue1)",
+    "detection": "new-cloudshell-user.yaml",
+    "field": "'"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by TimeKey, Caller, ResourceGroup, SubscriptionId, TenantId, AzureIP, UserIP, HTTPRequest, Type, Properties, CategoryValue, OperationList = strcat(OperationNameValue, ' , ', OperationNameValue1)",
+    "detection": "new-cloudshell-user.yaml",
+    "field": "'"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by TimeKey, Caller, ResourceGroup, SubscriptionId, TenantId, AzureIP, UserIP, HTTPRequest, Type, Properties, CategoryValue, OperationList = strcat(OperationNameValue, ' , ', OperationNameValue1)",
+    "detection": "new-cloudshell-user.yaml",
+    "field": "operationnamevalue1)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize RemovedGlobalAdminTime = max(TimeGenerated), TargetAdmins = make_set(Target,100) by OperationName, RoleName, Initiator, InitiatingAppName, InitiatingAppServicePrincipalId, InitiatingUserPrincipalName, InitiatingAadUserId, InitiatingIpAddress, Result;",
+    "detection": "multipleadmin-membership-removals-from-newadmin.yaml",
+    "field": "result;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AddedGlobalAdminTime = max(TimeGenerated) by OperationName, RoleName, Target, Initiator, Result;",
+    "detection": "multipleadmin-membership-removals-from-newadmin.yaml",
+    "field": "result;"
+  },
+  {
+    "type": "EXTEND",
+    "line": "  | extend SessionStartedUtc = row_window_session(TimeGenerated, timeRange, authenticationWindow, UserPrincipalName != prev(UserPrincipalName) or prev(FailureOrSuccess) == \"Success\")",
+    "detection": "signinbruteforce-azureportal.yaml",
+    "field": "userprincipalname !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize FailureOrSuccessCount = count() by  FailureOrSuccess, UserId, UserDisplayName, AppDisplayName, IPAddress, Browser, OS, State, City, Region, Type, CorrelationId, bin(TimeGenerated, authenticationWindow), ResultType, UserPrincipalName, SessionStartedUtc",
+    "detection": "signinbruteforce-azureportal.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize FailureOrSuccessCount = count() by  FailureOrSuccess, UserId, UserDisplayName, AppDisplayName, IPAddress, Browser, OS, State, City, Region, Type, CorrelationId, bin(TimeGenerated, authenticationWindow), ResultType, UserPrincipalName, SessionStartedUtc",
+    "detection": "signinbruteforce-azureportal.yaml",
+    "field": "authenticationwindow)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, InitiatedBy, IpAddress, TargetResourceName, Category, OperationName, ConsentType, UserAgent, CorrelationId, Type;",
+    "detection": "rareapplicationconsent.yaml",
+    "field": "type;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize FailedPrincipalCount = dcount(UserPrincipalName) by bin(TimeGenerated, authenticationWindow), IPAddress, AppDisplayName, Type",
+    "detection": "signinpasswordspray.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize FailedPrincipalCount = dcount(UserPrincipalName) by bin(TimeGenerated, authenticationWindow), IPAddress, AppDisplayName, Type",
+    "detection": "signinpasswordspray.yaml",
+    "field": "authenticationwindow)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "  | project IPAddress;",
+    "detection": "authenticationattemptfromnewcountry.yaml",
+    "field": "ipaddress;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(PropName) by TimeGenerated, CorrelationId, CreatedUserPrincipalName, CreatingUserPrincipalName, CreatingAadUserId, CreatingUserIPAddress, tostring(set_displayName)",
+    "detection": "useraccountcreatedwithoutexpectedattributesdefined.yaml",
+    "field": "tostring(set_displayname)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(TargetUserPrincipalName) by bin(TimeGenerated, 1h)",
+    "detection": "bulkchangestoprivilegedaccountpermissions.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(TargetUserPrincipalName) by bin(TimeGenerated, 1h)",
+    "detection": "bulkchangestoprivilegedaccountpermissions.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Start=min(TimeGenerated), End=max(TimeGenerated), Actions = make_set(ResultReason, MaxSize=8) by InitiatingAppName, InitiatingAppServicePrincipalId,",
+    "detection": "authenticationmethodschangedforprivilegedaccount.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Diff = make_list(FailureSuccessDiff, 10000), TimeStamp = make_list(TimeGenerated, 10000) by UserDisplayName, UserPrincipalName//, tostring(IPAddresses)",
+    "detection": "bruteforcecloudpc.yaml",
+    "field": "userprincipalname//"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Diff = make_list(FailureSuccessDiff, 10000), TimeStamp = make_list(TimeGenerated, 10000) by UserDisplayName, UserPrincipalName//, tostring(IPAddresses)",
+    "detection": "bruteforcecloudpc.yaml",
+    "field": "tostring(ipaddresses)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (Anomalies, Score, Baseline) = series_decompose_anomalies(Diff, sensitivity, -1, 'linefit')",
+    "detection": "bruteforcecloudpc.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize make_list(Activities) by AppID;",
+    "detection": "suspiciousserviceprincipalcreationactivity.yaml",
+    "field": "appid;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize make_list(AssignedRoles) by AppID;",
+    "detection": "suspiciousserviceprincipalcreationactivity.yaml",
+    "field": "appid;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize FailedCountPerDay=count(),FailedUserAgents=make_set(UserAgent), FailedCountries=make_set(LocationDetails.countryOrRegion),FailedIps=make_set(IPAddress) by UserPrincipalName, Day=bin(TimeGenerated, 1d)",
+    "detection": "expiredaccesscredentials.yaml",
+    "field": "day=bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize FailedCountPerDay=count(),FailedUserAgents=make_set(UserAgent), FailedCountries=make_set(LocationDetails.countryOrRegion),FailedIps=make_set(IPAddress) by UserPrincipalName, Day=bin(TimeGenerated, 1d)",
+    "detection": "expiredaccesscredentials.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(Location) by AppDisplayName, AppId, UserPrincipalName, UserId, bin(startofday(TimeGenerated), 1d)",
+    "detection": "anomaloususerappsigninlocationincrease-detection.yaml",
+    "field": "bin(startofday(timegenerated)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(Location) by AppDisplayName, AppId, UserPrincipalName, UserId, bin(startofday(TimeGenerated), 1d)",
+    "detection": "anomaloususerappsigninlocationincrease-detection.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (Anomalies, Score, Baseline) = series_decompose_anomalies(CountOfLocations, sensitivity, -1, 'linefit')",
+    "detection": "anomaloususerappsigninlocationincrease-detection.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize RemovedGlobalAdminTime = max(TimeGenerated), TargetAdmins = make_set(Target) by OperationName,  RoleName, Initiator, Result;",
+    "detection": "threat-essentials-multipleadmin-membership-removals-from-newadmin.yaml",
+    "field": "result;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AddedGlobalAdminTime = max(TimeGenerated) by OperationName,  RoleName, Target, Initiator, Result;",
+    "detection": "threat-essentials-multipleadmin-membership-removals-from-newadmin.yaml",
+    "field": "result;"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(DailyCount, scorethreshold, -1, 'linefit')",
+    "detection": "useraccounts-cablockedsigninspikes.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project UserPrincipalName, AnomalyHour, TimeGenerated, DailyCount, baseline, anomalies, score;",
+    "detection": "useraccounts-cablockedsigninspikes.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize PartialFailedSignins = count(), LatestAnomalyTime = arg_max(TimeGenerated, *) by bin(TimeGenerated, 1h), OperationName, Category, ResultType, ResultDescription, UserPrincipalName, UserDisplayName, AppDisplayName, ClientAppUsed, IPAddress, ResourceDisplayName",
+    "detection": "useraccounts-cablockedsigninspikes.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize PartialFailedSignins = count(), LatestAnomalyTime = arg_max(TimeGenerated, *) by bin(TimeGenerated, 1h), OperationName, Category, ResultType, ResultDescription, UserPrincipalName, UserDisplayName, AppDisplayName, ClientAppUsed, IPAddress, ResourceDisplayName",
+    "detection": "useraccounts-cablockedsigninspikes.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, OperationName, Result, PermissionGrant, TargetAppDisplayName, TargetAppServicePrincipalId, InitiatingAppName, InitiatingAppServicePrincipalId,",
+    "detection": "azureadrolemanagementpermissiongrant.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "strcat(split(ipaddress, \":\")[0]"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "\":\""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "split(ipaddress, \":\")[1])"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "strcat(split(ipaddress, \".\")[0]"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "\".\""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SuccessLogonTime = TimeGenerated, UserPrincipalName, SuccessIPAddress = IPAddress, SuccessLocation = Location, AppDisplayName, SuccessIPBlock = iff(IPAddress contains \":\", strcat(split(IPAddress, \":\")[0], \":\", split(IPAddress, \":\")[1]), strcat(split(IPAddress, \".\")[0], \".\", split(IPAddress, \".\")[1])), Type",
+    "detection": "successthenfail-diffip-sameuserandapp.yaml",
+    "field": "split(ipaddress, \".\")[1]))"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project AppName, AppId, CorrelationId) on CorrelationId",
+    "detection": "mailpermissionsaddedtoapplication.yaml",
+    "field": "appname, appid, correlationid) on correlationid"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize CountOfLocations = dcount(Location), Locations = make_set(Location) by User = Identity",
+    "detection": "gitlab-signinburst.yaml",
+    "field": "user = identity"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (Anomalies, Score, Baseline) = series_decompose_anomalies(FailedLogins, sensitivity, -1, 'linefit')",
+    "detection": "brute-force-attack-against-github-account.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "    | extend (anomalies, score, baseline) = series_decompose_anomalies(HoursPerDay, 3, -1, 'linefit')",
+    "detection": "unusual-high-avd-session-duration-detected.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project UserName, TimeGenerated, HoursPerDay, baseline, anomalies, score;",
+    "detection": "unusual-high-avd-session-duration-detected.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "EXTEND",
+    "line": "  | extend (anomalies, score, baseline) = series_decompose_anomalies(Logons, 3, -1, 'linefit')",
+    "detection": "unusual-number-of-avd-connections-detected.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "  | project UserName, TimeGenerated, Logons, baseline, anomalies, score;",
+    "detection": "unusual-number-of-avd-connections-detected.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project key;",
+    "detection": "possible-suspicious-resources-added-or-updated-to-adv.yaml",
+    "field": "key;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountPortsInBinTime = dcount(DestinationPort) by SourceIp, bin(TimeGenerated, BinTime), Fqdn",
+    "detection": "azure-firewall-port-scan.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize AlertTimedCountHostsInBinTime = make_set(Fqdn) by SourceIp, bin(TimeGenerated, BinTime), DestinationPort",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bintime)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project bin(TimeGenerated, BinTime), SourceIp, DestinationPort, AlertTimedCountHostsInBinTime, Fqdn",
+    "detection": "azure-firewall-port-sweep.yaml",
+    "field": "bin(timegenerated, bintime)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend SessionBlockedStarted = row_window_session(TimeGenerated, queryperiod, 10m, ((clientIp_s != prev(clientIp_s)) or (hostname_s != prev(hostname_s))))",
+    "detection": "maliciouswafsessions.yaml",
+    "field": "((clientip_s !"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Target=column_ifexists(\"hostname_s\", tostring(AdditionalFields.hostname)), MaliciousHost = column_ifexists(\"clientIp_s\", tostring(AdditionalFields.clientIp)) , MaliciousCommand, details_data_s = column_ifexists(\"details_data_s\", tostring(AdditionalFields.details_data)), DecodedCmdLine, Message,",
+    "detection": "azurewafmatching-log4j-vuln.yaml",
+    "field": "tostring(additionalfields.hostname))"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Target=column_ifexists(\"hostname_s\", tostring(AdditionalFields.hostname)), MaliciousHost = column_ifexists(\"clientIp_s\", tostring(AdditionalFields.clientIp)) , MaliciousCommand, details_data_s = column_ifexists(\"details_data_s\", tostring(AdditionalFields.details_data)), DecodedCmdLine, Message,",
+    "detection": "azurewafmatching-log4j-vuln.yaml",
+    "field": "tostring(additionalfields.clientip))"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Target=column_ifexists(\"hostname_s\", tostring(AdditionalFields.hostname)), MaliciousHost = column_ifexists(\"clientIp_s\", tostring(AdditionalFields.clientIp)) , MaliciousCommand, details_data_s = column_ifexists(\"details_data_s\", tostring(AdditionalFields.details_data)), DecodedCmdLine, Message,",
+    "detection": "azurewafmatching-log4j-vuln.yaml",
+    "field": "tostring(additionalfields.details_data))"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Target=column_ifexists(\"hostname_s\", tostring(AdditionalFields.hostname)), MaliciousHost = column_ifexists(\"clientIp_s\", tostring(AdditionalFields.clientIp)) , MaliciousCommand, details_data_s = column_ifexists(\"details_data_s\", tostring(AdditionalFields.details_data)), DecodedCmdLine, Message,",
+    "detection": "azurewafmatching-log4j-vuln.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-hotwordsoutgoingstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-hotwordsfirewallrulestatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-errorscredentialstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-errorssyntaxstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "  | project SQLSecurityAuditEvents_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "ipentity-azuresql.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-hotwordsoleobjectstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-volumeresponserowsstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Database, PrincipalName, ClientIp, HostName, ApplicationName, ActionName, Statement,",
+    "detection": "detection-volumeresponserowsstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project TimeGenerated, PrincipalName = server_principal_name_s, ClientIp = client_ip_s, HostName = host_name_s, ResourceId,",
+    "detection": "detection-errorsfirewallstatefulanomalyondatabase.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by data_definedTags_Oracle_Tags_CreatedBy_s, bin(TimeGenerated, 10m)",
+    "detection": "ocidiscoveryactivity.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by data_definedTags_Oracle_Tags_CreatedBy_s, bin(TimeGenerated, 10m)",
+    "detection": "ocidiscoveryactivity.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 10m)",
+    "detection": "ocimultipleinstancesterminated.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 10m)",
+    "detection": "ocimultipleinstancesterminated.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "ocimultiplerejects.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "ocimultiplerejects.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize p_count = dcount(DstIpAddr) by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "ocisshscan.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize p_count = dcount(DstIpAddr) by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "ocisshscan.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 10m)",
+    "detection": "ocimultipleinstanceslaunched.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by SrcIpAddr, bin(TimeGenerated, 10m)",
+    "detection": "ocimultipleinstanceslaunched.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by EventName, EventTypeName, RecipientAccountId, AccountName, AccountUPNSuffix, UserIdentityAccountId, UserIdentityPrincipalid, UserAgent,",
+    "detection": "aws-logtampering.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by EventName, EventTypeName, LoginResult, MFAUsed, RecipientAccountId, AccountName, AccountUPNSuffix, UserIdentityAccountId,  UserIdentityPrincipalid, UserAgent,",
+    "detection": "aws-consolelogonwithoutmfa.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by ClientIP, bin(TimeGenerated, 1h)",
+    "detection": "suspicious-actor-detected-on-aws-elb.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by ClientIP, bin(TimeGenerated, 1h)",
+    "detection": "suspicious-actor-detected-on-aws-elb.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend session_start_time = row_window_session(TimeGenerated, 1h, 1h, ClientIP != prev(ClientIP))",
+    "detection": "suspicious-actor-detected-on-aws-elb.yaml",
+    "field": "clientip !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(FilePath) by UserIdentityPrincipalid, bin(startofday(TimeGenerated), 1d)",
+    "detection": "suspiciousaccessofbecrelateddocumentsinawss3buckets.yaml",
+    "field": "bin(startofday(timegenerated)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize dcount(FilePath) by UserIdentityPrincipalid, bin(startofday(TimeGenerated), 1d)",
+    "detection": "suspiciousaccessofbecrelateddocumentsinawss3buckets.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (Anomalies, Score, Baseline) = series_decompose_anomalies(CountOfDocs, sensitivity, -1, 'linefit')",
+    "detection": "suspiciousaccessofbecrelateddocumentsinawss3buckets.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by EventName, EventTypeName, RecipientAccountId, AccountName, AccountUPNSuffix, UserIdentityAccountId, UserIdentityPrincipalid, UserAgent,",
+    "detection": "aws-clearstopchangetraillogs.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by EventName, EventTypeName, RecipientAccountId, AccountName, AccountUPNSuffix, UserIdentityAccountId, UserIdentityPrincipalid, UserAgent,",
+    "detection": "aws-changetovpc.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize last1hCumTotal = sum(CumulativeTotal), last1hAvgRatePerSec = avg(CurrentAvgRatePerSec), last1hAvgBurstRatePerSec = avg(CurrentBurstRatePerSec) by DeviceName, DeviceEventClassID, SourceIP, SourceOfDropRateCount, DropRate;",
+    "detection": "ciscoasa-avgattackdetectrateincrease.yaml",
+    "field": "droprate;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project CommonSecurityLog_TimeGenerated, FileHashValue, FileHashType, Description, ThreatType,",
+    "detection": "filehashentity-covid19-commonsecuritylog.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize EventCount=count(), stdevif(diff, diff != 9999), stdev(ReceivedBytes), StartTime=min(TimeGenerated), EndTime=arg_max(TimeGenerated, *) by tuple, Bin=bin(TimeGenerated, bin_size), DeviceName",
+    "detection": "paloalto-potential-beaconing.yaml",
+    "field": "stdevif(diff, diff !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize EventCount=count(), stdevif(diff, diff != 9999), stdev(ReceivedBytes), StartTime=min(TimeGenerated), EndTime=arg_max(TimeGenerated, *) by tuple, Bin=bin(TimeGenerated, bin_size), DeviceName",
+    "detection": "paloalto-potential-beaconing.yaml",
+    "field": "bin=bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize EventCount=count(), stdevif(diff, diff != 9999), stdev(ReceivedBytes), StartTime=min(TimeGenerated), EndTime=arg_max(TimeGenerated, *) by tuple, Bin=bin(TimeGenerated, bin_size), DeviceName",
+    "detection": "paloalto-potential-beaconing.yaml",
+    "field": "bin_size)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize ConfidenceScore=max(ConfidenceScore), LastSeen=max(TimeGenerated) by DestinationIP, ThreatDescription=Description, ThreatType",
+    "detection": "paloalto-potential-beaconing.yaml",
+    "field": "threatdescription=description"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend truncatedDomain = iff((strlen(Query) - indexof(Query, tostring(split(Query, \".\")[-2])) ) >= 7,",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "tostring(split(query, \".\")[-2])) ) >"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize domainCount = dcount(truncatedDomain) by DvcIpAddr, bin(TimeGenerated, 1d)",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize domainCount = dcount(truncatedDomain) by DvcIpAddr, bin(TimeGenerated, 1d)",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize qPercentiles = percentiles(SearchList, mypercentile) by DvcIpAddr);",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "dvcipaddr);"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project DvcIpAddr, IPthreshold);",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "dvcipaddr, ipthreshold);"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project SearchList = strcat(truncatedDomain,\" (\",tostring(domainCount),\")\"), DvcIpAddr",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "\" (\""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project SearchList = strcat(truncatedDomain,\" (\",tostring(domainCount),\")\"), DvcIpAddr",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "tostring(domaincount),\")\")"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project truncatedDomain = strcat(truncatedDomain,\" (\",tostring(domainCount),\")\"), DvcIpAddr",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "\" (\""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project truncatedDomain = strcat(truncatedDomain,\" (\",tostring(domainCount),\")\"), DvcIpAddr",
+    "detection": "dns-highpercentnxdomaincount.yaml",
+    "field": "tostring(domaincount),\")\")"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize dcount(Query) by DvcIpAddr, bin(TimeGenerated, 1d)",
+    "detection": "dns-highreversednscount-detection.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize dcount(Query) by DvcIpAddr, bin(TimeGenerated, 1d)",
+    "detection": "dns-highreversednscount-detection.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project Version, Major,Minor,Patch,",
+    "detection": "omi-vulnerability-detection.yaml",
+    "field": ""
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(sum_Quantity, 2.5, 7, 'linefit', 1, 'ctukey', 0.01)",
+    "detection": "detected-significant-ingestion-decrease.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize max(TimeGenerated) by SentinelResourceName, Status, prev_status, SentinelResourceId // Get latest event",
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "field": "sentinelresourceid // get latest event"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by bin(TimeGenerated, 1d), SentinelResourceName, Status, SentinelResourceId // Normalise events to per day",
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by bin(TimeGenerated, 1d), SentinelResourceName, Status, SentinelResourceId // Normalise events to per day",
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by bin(TimeGenerated, 1d), SentinelResourceName, Status, SentinelResourceId // Normalise events to per day",
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "field": "sentinelresourceid // normalise events to per day"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count(), max(TimeGenerated) by SentinelResourceName, Status, SentinelResourceId // Count the number of updates by resource name and status",
+    "detection": "detect-latest-failure-events-per-connector.yaml",
+    "field": "sentinelresourceid // count the number of updates"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project SearchKey))",
+    "detection": "potential-data-source-stopped-sending-logs.yaml",
+    "field": "searchkey))"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by DataType, bin(TimeGenerated, 1h)",
+    "detection": "potential-data-source-stopped-sending-logs.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by DataType, bin(TimeGenerated, 1h)",
+    "detection": "potential-data-source-stopped-sending-logs.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Ingestion, ExpectedIngestion, AnomalyScore, Anomalies, DataType // Defines which columns to return",
+    "detection": "potential-data-source-stopped-sending-logs.yaml",
+    "field": "datatype // defines which columns to return"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(sum_Quantity, 2, 7, 'linefit', 1, 'ctukey', 0.01)",
+    "detection": "detected-potential-anomaly-in-volume-of-logs-ingested.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize OutcomeCount=count(), make_set(TargetUsername,128), make_set(DvcHostname,128) by bin(TimeGenerated, 1m), SrcIpAddr, Outcome",
+    "detection": "linux-ssh-failed-login-attempts-followed-by-successful-login.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize OutcomeCount=count(), make_set(TargetUsername,128), make_set(DvcHostname,128) by bin(TimeGenerated, 1m), SrcIpAddr, Outcome",
+    "detection": "linux-ssh-failed-login-attempts-followed-by-successful-login.yaml",
+    "field": "1m)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend SessionStartedUtc = row_window_session(TimeGenerated, timeRange, authenticationWindow, SrcIpAddr != prev(SrcIpAddr) or prev(Outcome) == \"Accepted\")",
+    "detection": "linux-ssh-failed-login-attempts-followed-by-successful-login.yaml",
+    "field": "srcipaddr !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize EventTimes = make_list(TimeGenerated), PerHourCount = count() by bin(TimeGenerated,4h), ip, Computer, user, _ResourceId",
+    "detection": "ssh-potentialbruteforce.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize EventTimes = make_list(TimeGenerated), PerHourCount = count() by bin(TimeGenerated,4h), ip, Computer, user, _ResourceId",
+    "detection": "ssh-potentialbruteforce.yaml",
+    "field": "4h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(EventTimes), EndTime = max(EventTimes), UserList = make_set(user), ComputerList = make_set(Computer), ResourceIdList = make_set(_ResourceId), sum(PerHourCount) by IPAddress = ip",
+    "detection": "ssh-potentialbruteforce.yaml",
+    "field": "ipaddress = ip"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize ListOfActions = makeset(OperationName) by EventTime10MinInterval = bin(TimeGenerated, 10m), DvcHostname, ActorUsername",
+    "detection": "abnormalcrontabaction.yaml",
+    "field": "eventtime10mininterval = bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize ListOfActions = makeset(OperationName) by EventTime10MinInterval = bin(TimeGenerated, 10m), DvcHostname, ActorUsername",
+    "detection": "abnormalcrontabaction.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize privatecount=countif(ipType==\"private\"), publiccount=countif(ipType==\"public\") by HostName, HostIP, bin(EventTime, 1d)",
+    "detection": "ssh-newlyinternetexposed.yaml",
+    "field": "bin(eventtime"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize privatecount=countif(ipType==\"private\"), publiccount=countif(ipType==\"public\") by HostName, HostIP, bin(EventTime, 1d)",
+    "detection": "ssh-newlyinternetexposed.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize MultipleServerErrors = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxmultipleservererrorsfromsingleip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize MultipleServerErrors = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxmultipleservererrorsfromsingleip.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(HttpUserAgentOriginal) by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxdifferentuasfromsingleip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize makeset(HttpUserAgentOriginal) by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxdifferentuasfromsingleip.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize post_time=min(EventStartTime) by SrcIpAddr, tostring(UrlOriginal);",
+    "detection": "nginxputandgetfilefromsameip.yaml",
+    "field": "tostring(urloriginal);"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize get_time=min(EventStartTime) by SrcIpAddr, tostring(UrlOriginal)",
+    "detection": "nginxputandgetfilefromsameip.yaml",
+    "field": "tostring(urloriginal)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize MultipleClientErrors = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxmultipleclienterrorsfromsingleip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize MultipleClientErrors = count() by SrcIpAddr, bin(TimeGenerated, 5m)",
+    "detection": "nginxmultipleclienterrorsfromsingleip.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), OperationCount = count() by Operation, UserType, UserId, ClientIP = ClientIPOnly, Port, ResultStatus, Parameters",
+    "detection": "office-policytampering.yaml",
+    "field": "clientip = clientiponly"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), DistinctUserCount = dcount(UserId), UserId = make_set(UserId, 250), Ports = make_set(Port, 250), EventCount = count() by tostring(DestinationMailAddress), ClientIP",
+    "detection": "multipleusersemailforwardedtosamedestination.yaml",
+    "field": "tostring(destinationmailaddress)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize [\"app@sharepoint\"]=countif(UserId == \"app@sharepoint\"), Others=countif(UserId != \"app@sharepoint\") by SystemAlertId",
+    "detection": "unusual-volume-of-file-deletion-custom-correlation.yaml",
+    "field": "[\"app@sharepoint\"]"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeAdded=TimeGenerated, Operation, MemberAdded = UPN, UserWhoAdded = UserId, TeamName, ClientIP;",
+    "detection": "externaluseraddedremovedinteams.yaml",
+    "field": "clientip;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeDeleted=TimeGenerated, Operation, MemberRemoved = UPN, UserWhoDeleted = UserId, TeamName, ClientIP;",
+    "detection": "externaluseraddedremovedinteams.yaml",
+    "field": "clientip;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), DistinctUserCount = dcount(UserId), UserId = make_set(UserId, 250), Ports = make_set(Port, 250), EventCount = count() by tostring(DestinationMailAddress), ClientIP",
+    "detection": "office-mailforwarding.yaml",
+    "field": "tostring(destinationmailaddress)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, scorethreshold, -1, 'linefit')",
+    "detection": "mailitemsaccessedtimeseries.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Total, baseline, anomalies, score;",
+    "detection": "mailitemsaccessedtimeseries.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize HourlyCount=count(), TimeGeneratedMax = arg_max(TimeGenerated, *), IPAdressList = make_set(Client_IPAddress, 1000), SourceIPMax= arg_max(Client_IPAddress, *), ClientInfoStringList= make_set(ClientInfoString, 1000) by MailboxOwnerUPN, Logon_Type, TenantId, UserType, TimeGenerated = bin(TimeGenerated, 1h)",
+    "detection": "mailitemsaccessedtimeseries.yaml",
+    "field": "timegenerated = bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize HourlyCount=count(), TimeGeneratedMax = arg_max(TimeGenerated, *), IPAdressList = make_set(Client_IPAddress, 1000), SourceIPMax= arg_max(Client_IPAddress, *), ClientInfoStringList= make_set(ClientInfoString, 1000) by MailboxOwnerUPN, Logon_Type, TenantId, UserType, TimeGenerated = bin(TimeGenerated, 1h)",
+    "detection": "mailitemsaccessedtimeseries.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by SourceIP = ClientIP, Account = UserId, Type, RecordType, OfficeWorkload, UserAgent, OfficeObjectId, IPMatch = \"ClientIP\"",
+    "detection": "manganese-vpn-iocs.yaml",
+    "field": "sourceip = clientip"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by SourceIP = ClientIP, Account = UserId, Type, RecordType, OfficeWorkload, UserAgent, OfficeObjectId, IPMatch = \"ClientIP\"",
+    "detection": "manganese-vpn-iocs.yaml",
+    "field": "account = userid"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by SourceIP = ClientIP, Account = UserId, Type, RecordType, OfficeWorkload, UserAgent, OfficeObjectId, IPMatch = \"ClientIP\"",
+    "detection": "manganese-vpn-iocs.yaml",
+    "field": "ipmatch = \"clientip\""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by Computer, SubjectUserName, SubjectDomainName, SubjectAccount, SubjectUserSid, SubjectLogonId,",
+    "detection": "fakecomputeraccountcreated.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "  | summarize allowed_shares = make_set(share) by system;",
+    "detection": "excessivesharepermissions.yaml",
+    "field": "system;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Authorized_Public_Principals = make_set(Group_Name), take_any(*) by TimeGenerated, SourceComputerId, EventData // Summarize the fields back, making a set of the various group_name values for this record.",
+    "detection": "excessivesharepermissions.yaml",
+    "field": "eventdata // summarize the fields back"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Authorized_Public_Principals = make_set(Group_Name), take_any(*) by TimeGenerated, SourceComputerId, EventData // Summarize the fields back, making a set of the various group_name values for this record.",
+    "detection": "excessivesharepermissions.yaml",
+    "field": "making a set of the various group_name values for this record."
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize TargetObjectNameAccessed=make_set(TargetObjectName), ActionPerformedOnObject=make_set(bag_pack(TargetObjectName,EventSubType)) by ActorUsername, bin(TimeGenerated, 5m)",
+    "detection": "detected-user-accessing-multiple-secrets.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize TargetObjectNameAccessed=make_set(TargetObjectName), ActionPerformedOnObject=make_set(bag_pack(TargetObjectName,EventSubType)) by ActorUsername, bin(TimeGenerated, 5m)",
+    "detection": "detected-user-accessing-multiple-secrets.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Fails=count() by ActorUsername, FailureTime=bin(TimeGenerated, 1m)",
+    "detection": "multiple-failed-authentication-attempts-to-success.yaml",
+    "field": "failuretime=bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Fails=count() by ActorUsername, FailureTime=bin(TimeGenerated, 1m)",
+    "detection": "multiple-failed-authentication-attempts-to-success.yaml",
+    "field": "1m)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project CreatedUserTime = TimeGenerated, CreatedUserEventID = EventID, CreatedUserActivity = Activity, Computer = toupper(Computer),",
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project CreatedUserTime = TimeGenerated, CreatedUserEventID = EventID, CreatedUserActivity = Activity, Computer = toupper(Computer),",
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project GroupAddTime = TimeGenerated, GroupAddEventID = EventID, GroupAddActivity = Activity, Computer = toupper(Computer), GroupName = tolower(TargetAccount),",
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project GroupAddTime = TimeGenerated, GroupAddEventID = EventID, GroupAddActivity = Activity, Computer = toupper(Computer), GroupName = tolower(TargetAccount),",
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project Computer, CreatedUserTime, CreatedUserEventID, CreatedUserActivity, CreatedUser, CreatedUserSid, CreatedUserAccountName, CreatedUserDomainName,",
+    "detection": "usercreatedaddedtobuiltinadmins-1d.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project AzureActivity_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore, TI_ipEntity, CallerIpAddress,",
+    "detection": "ipentity-azureactivity.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize ComputerCountPrev7Days = dcount(Computer) by Account = tolower(Account), IpAddress",
+    "detection": "rdp-multipleconnectionsfromsinglesystem.yaml",
+    "field": "account = tolower(account)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize ComputerCountPrev7Days = dcount(Computer) by Account = tolower(Account), IpAddress)",
+    "detection": "rdp-multipleconnectionsfromsinglesystem.yaml",
+    "field": "account = tolower(account)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize ComputerCountPrev7Days = dcount(Computer) by Account = tolower(Account), IpAddress)",
+    "detection": "rdp-multipleconnectionsfromsinglesystem.yaml",
+    "field": "ipaddress)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize triCount=count() by tostring(Trigram)",
+    "detection": "multivendor-possibledgacontacts.yaml",
+    "field": "tostring(trigram)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize count() by tostring(AllTriGrams), DGADomain",
+    "detection": "multivendor-possibledgacontacts.yaml",
+    "field": "tostring(alltrigrams)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project  UrlClickedByUserSid = RemoteUrl,",
+    "detection": "possiblephishingwithcsl-networksession.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count() by TimeGenerated, RecipientEmailAddress, UrlClickedByUserSid, InitiatingProcessAccountUpn, InitiatingProcessAccountName, InitiatingProcessAccountDomain,",
+    "detection": "possiblephishingwithcsl-networksession.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project AzureActivity_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, ExpirationDateTime, ConfidenceScore, Url, EmailSenderName, EmailRecipient,",
+    "detection": "emailentity-azureactivity.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize Roles = make_list(AssignedRoles) by AccountUPN = tolower(AccountUPN)",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "accountupn = tolower(accountupn)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize Roles = make_list(AssignedRoles) by AccountUPN = tolower(AccountUPN)",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "accountupn = tolower(accountupn)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "    | extend (anomalies, score, baseline) = series_decompose_anomalies(HourlyCount, scorethreshold, -1, 'linefit')",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project UserPrincipalName, Roles, AnomalyHour, TimeGenerated, HourlyCount, baseline, anomalies, score;",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "score;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize PartialFailedSignins = count(), LatestAnomalyTime = arg_max(TimeGenerated, *) by bin(TimeGenerated, 1h), OperationName, Category, ResultType, ResultDescription, UserPrincipalName, Roles, UserDisplayName, AppDisplayName, ClientAppUsed, IPAddress, ResourceDisplayName",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize PartialFailedSignins = count(), LatestAnomalyTime = arg_max(TimeGenerated, *) by bin(TimeGenerated, 1h), OperationName, Category, ResultType, ResultDescription, UserPrincipalName, Roles, UserDisplayName, AppDisplayName, ClientAppUsed, IPAddress, ResourceDisplayName",
+    "detection": "privilegedaccountssigninfailurespikesfromunknownip.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, AccountType, Account, Type, TargetUserName),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "timegenerated, computer, accounttype, account, type, targetusername)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, AccountType, Account, Type, TargetUserName),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, AccountType, Account, Type, TargetUserName),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "timegenerated, computer, accounttype, account, type, targetusername)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, AccountType, Account, Type, TargetUserName),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, AccountType, Account, TargetUserName, Computer = \"\", Type),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "timegenerated, accounttype, account, targetusername, computer"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, AccountType, Account, TargetUserName, Computer = \"\", Type),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, AccountType, Account, Type, Computer = \"\"),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "timegenerated, accounttype, account, type, computer"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, AccountType, Account, Type, Computer = \"\"),",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, AccountType, Account, Computer = HostName, Type)",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "timegenerated, accounttype, account, computer"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, AccountType, Account, Type, TargetUserName;",
+    "detection": "multiplepasswordresetsbyuser.yaml",
+    "field": "targetusername;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, EventID, Activity, Computer, SimpleMemberName, MemberName, MemberSid, TargetAccount, TargetUserName, TargetDomainName, TargetSid, UserPrincipalName,",
+    "detection": "useraccountaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, EventID, Computer, SimpleMemberName, MemberName, MemberSid, TargetAccount, TargetUserName, TargetDomainName, TargetSid, UserPrincipalName,",
+    "detection": "useraccountaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by BuildParentProcess=ParentProcessName, BuildProcess=Process, BuildAccount = Account, Computer, BuildCommand=CommandLine, timekey= bin(TimeGenerated, time_window), BuildProcessTime=TimeGenerated",
+    "detection": "potentialbuildprocesscompromise.yaml",
+    "field": "by buildparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by FileEditParentProcess=ParentProcessName, FileEditAccount = Account, Computer, FileEdited=ObjectName, FileEditProcess=ProcessName, timekey= bin(TimeGenerated, time_window), FileEditTime=TimeGenerated)",
+    "detection": "potentialbuildprocesscompromise.yaml",
+    "field": "by fileeditparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by BuildParentProcess=ParentProcessName, BuildProcess=Process, BuildAccount = Account, Computer, BuildCommand=CommandLine, timekey= bin(TimeGenerated, time_window), BuildProcessTime=TimeGenerated",
+    "detection": "potentialbuildprocesscompromise.yaml",
+    "field": "by buildparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by FileEditParentProcess=ParentProcessName, FileEditAccount = Account, Computer, FileEdited=ObjectName, FileEditProcess=ProcessName, timekey= bin(TimeGenerated, time_window), FileEditTime=TimeGenerated)",
+    "detection": "potentialbuildprocesscompromise.yaml",
+    "field": "by fileeditparentprocess"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by SrcIpAddr, bin(TimeGenerated,5m)",
+    "detection": "excessivehttpfailuresfromsource.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize Count=count() by SrcIpAddr, bin(TimeGenerated,5m)",
+    "detection": "excessivehttpfailuresfromsource.yaml",
+    "field": "5m)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project GroupAddTime = TimeGenerated, GroupAddEventID = EventID, GroupAddActivity = Activity, GroupAddComputer = Computer,",
+    "detection": "groupcreatedaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project GroupAddTime = TimeGenerated, GroupAddEventID = EventID, GroupAddActivity = Activity, GroupAddComputer = Computer,",
+    "detection": "groupcreatedaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project GroupCreateTime = TimeGenerated, GroupCreateEventID = EventID, GroupCreateActivity = Activity, GroupCreateComputer = Computer,",
+    "detection": "groupcreatedaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project GroupCreateTime = TimeGenerated, GroupCreateEventID = EventID, GroupCreateActivity = Activity, GroupCreateComputer = Computer,",
+    "detection": "groupcreatedaddedtoprivlegegroup-1h.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, EventID, Activity, Computer, TargetAccount, TargetSid, SubjectAccount, SubjectUserSid);",
+    "detection": "password-not-set.yaml",
+    "field": "timegenerated, eventid, activity, computer, targetaccount, targetsid, subjectaccount, subjectusersid);"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, Account, Process, NewProcessName, CommandLine, ParentProcessName, _ResourceId)",
+    "detection": "nobelium-suspiciousscriptregistrywrite.yaml",
+    "field": "timegenerated, computer, account, process, newprocessname, commandline, parentprocessname, _resourceid)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HashCount=count() by ScriptFingerprintHash;",
+    "detection": "rareruncommandpowershellscript.yaml",
+    "field": "scriptfingerprinthash;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by Computer = toupper(Computer), IpAddress, Account = tolower(Account)",
+    "detection": "rdp-rareconnection.yaml",
+    "field": "by computer"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize by Computer = toupper(Computer), IpAddress, Account = tolower(Account)",
+    "detection": "rdp-rareconnection.yaml",
+    "field": "by computer"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project OfficeActivity_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, ExpirationDateTime, ConfidenceScore, Operation,",
+    "detection": "urlentity-officeactivity.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SecurityEvent_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "emailentity-securityevent.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project StartTime = min_TimeGenerated, EndTime = max_TimeGenerated, TargetUserName, Computer, ClientIPAddress, TicketOptions,",
+    "detection": "potentialkerberoast.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize arg_max(TimeGenerated, ClientIP) by Computer= DeviceName",
+    "detection": "rdp-nesting.yaml",
+    "field": "computer= devicename"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "account = tolower(account)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "1d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize make_set(Computer), ComputerCount = dcount(Computer) by bin(TimeGenerated, 1d), Account = tolower(Account), IpAddress",
+    "detection": "rdp-nesting.yaml",
+    "field": "account = tolower(account)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": "account = subjectusername"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": "accountdomain = subjectdomainname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": "account = subjectusername"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": "accountdomain = subjectdomainname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count() by Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName,",
+    "detection": "base64-encoded-pefile.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project Alert_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "emailentity-securityalert.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project EnableTime = TimeGenerated, EnableEventID = EventID, EnableActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project EnableTime = TimeGenerated, EnableEventID = EventID, EnableActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project DisableTime = TimeGenerated, DisableEventID = EventID, DisableActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project DisableTime = TimeGenerated, DisableEventID = EventID, DisableActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeDelta, EnableTime, EnableEventID, EnableActivity, Computer, TargetAccount, TargetSid, TargetUserName, TargetDomainName, UserPrincipalName,",
+    "detection": "useraccountenableddisabled-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), FailedLogonCount = count() by bin(TimeGenerated,10m), EventID,",
+    "detection": "gte-6-failedlogons-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project CommonSecurityLog_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "filehashentity-commonsecuritylog.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "  | project AWSCloudTrail_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "ipentity-awscloudtrail.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": " | project StartTime = TimeGenerated, EventID, Activity, Computer, TargetAccount, TargetUserName, TargetDomainName, TargetSid,",
+    "detection": "password-never-expires.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": " | project StartTime = TimeGenerated, EventID, Activity, Computer, TargetAccount, TargetUserName = tostring(EventData.TargetUserName), TargetDomainName = tostring(EventData.TargetDomainName), TargetSid,",
+    "detection": "password-never-expires.yaml",
+    "field": ""
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, 1.5, -1, 'linefit')",
+    "detection": "timeseriesanomaly-processexecutions.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize CommandlineCount = count() by bin(TimeGenerated, 1h), Process, CommandLine, Computer, Account",
+    "detection": "timeseriesanomaly-processexecutions.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize CommandlineCount = count() by bin(TimeGenerated, 1h), Process, CommandLine, Computer, Account",
+    "detection": "timeseriesanomaly-processexecutions.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "        | summarize CountIPSignin = count(), Country = any(Country), ListSigninTimeGenerated = make_list(TimeGenerated) by IPAddress, UserPrincipalName;",
+    "detection": "anomalousipusagefollowedbyteamsaction.yaml",
+    "field": "userprincipalname;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, HostIP, IpAddress = SourceIP, SyslogMessage, Facility, ProcessName, Reason;",
+    "detection": "aadhostlogincorrelation.yaml",
+    "field": "reason;"
+  },
+  {
+    "type": "PROJECT",
+    "line": "  | project VMConnection_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "ipentity-vmconnection.yaml",
+    "field": ""
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(TotalBytesSent, scorethreshold, -1, 'linefit')",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project DeviceVendor, AnomalyHour, TimeGenerated, TotalBytesSentinMBperHour, baselinebytessentperHour, anomalies, score);",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "devicevendor, anomalyhour, timegenerated, totalbytessentinmbperhour, baselinebytessentperhour, anomalies, score);"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(), TimeGeneratedMax=arg_max(TimeGenerated, *), DestinationIPList=make_set(DestinationIP, 100), DestinationPortList = make_set(DestinationPort,100), TotalSentBytesinMB = sum(SentBytesinMB), TotalReceivedBytesinMB = sum(ReceivedBytesinMB) by SourceIP, DeviceVendor, TimeGeneratedHour=bin(TimeGenerated,1h)",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "timegeneratedhour=bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(), TimeGeneratedMax=arg_max(TimeGenerated, *), DestinationIPList=make_set(DestinationIP, 100), DestinationPortList = make_set(DestinationPort,100), TotalSentBytesinMB = sum(SentBytesinMB), TotalReceivedBytesinMB = sum(ReceivedBytesinMB) by SourceIP, DeviceVendor, TimeGeneratedHour=bin(TimeGenerated,1h)",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend Rank=row_number(1, prev(TimeGeneratedHour) != TimeGeneratedHour) // Ranking the dataset per Hourly Partition",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "prev(timegeneratedhour) !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(),TimeGeneratedMax=arg_max(TimeGenerated, *), DestinationIPList=make_set(DestinationIP, 100), DestinationPortList = make_set(DestinationPort, 100), TotalSentBytesinMB = sum(SentBytesinMB),TotalReceivedBytesinMB = sum(ReceivedBytesinMB) by SourceIP, DeviceVendor, TimeGeneratedHour=bin(TimeGenerated,1h)",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "timegeneratedhour=bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(),TimeGeneratedMax=arg_max(TimeGenerated, *), DestinationIPList=make_set(DestinationIP, 100), DestinationPortList = make_set(DestinationPort, 100), TotalSentBytesinMB = sum(SentBytesinMB),TotalReceivedBytesinMB = sum(ReceivedBytesinMB) by SourceIP, DeviceVendor, TimeGeneratedHour=bin(TimeGenerated,1h)",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend Rank=row_number(1, prev(TimeGeneratedHour) != TimeGeneratedHour) // Ranking the dataset per Hourly Partition",
+    "detection": "timeseriesanomaly-multivendor-dataexfiltration.yaml",
+    "field": "prev(timegeneratedhour) !"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "    | summarize count() by tostring(tld)",
+    "detection": "domainentity-paloalto.yaml",
+    "field": "tostring(tld)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "        | extend PA_Url = iif(PA_Url !startswith \"http://\" and ApplicationProtocol !~ \"ssl\", strcat('http://', PA_Url), iif(PA_Url !startswith \"https://\" and ApplicationProtocol =~ \"ssl\", strcat('https://', PA_Url), PA_Url))",
+    "detection": "domainentity-paloalto.yaml",
+    "field": "iif(pa_url !startswith \"https://\" and applicationprotocol"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project Audit_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, ExpirationDateTime, ConfidenceScore,",
+    "detection": "urlentity-auditlogs.yaml",
+    "field": ""
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend (anomalies, score, baseline) = series_decompose_anomalies(Total, scorethreshold, -1, 'linefit')",
+    "detection": "timeseriesanomaly-multivendor-networktraffic.yaml",
+    "field": "(anomalies, score, baseline)"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project DeviceVendor,AnomalyHour, TimeGenerated, Total, baseline, anomalies, score);",
+    "detection": "timeseriesanomaly-multivendor-networktraffic.yaml",
+    "field": "devicevendor,anomalyhour, timegenerated, total, baseline, anomalies, score);"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(), TimeGeneratedMax = arg_max(TimeGenerated, *), DestinationIPlist = make_set(DestinationIP, 100), DestinationPortlist = make_set(DestinationPort, 100) by DeviceVendor, SourceIP, TimeGeneratedHour= bin(TimeGenerated, 1h)",
+    "detection": "timeseriesanomaly-multivendor-networktraffic.yaml",
+    "field": "timegeneratedhour= bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize HourlyCount = count(), TimeGeneratedMax = arg_max(TimeGenerated, *), DestinationIPlist = make_set(DestinationIP, 100), DestinationPortlist = make_set(DestinationPort, 100) by DeviceVendor, SourceIP, TimeGeneratedHour= bin(TimeGenerated, 1h)",
+    "detection": "timeseriesanomaly-multivendor-networktraffic.yaml",
+    "field": "1h)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = ClientIP, Account = UserId, Type, Operation",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = clientip"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = ClientIP, Account = UserId, Type, Operation",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = userid"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "useragent = useragent_s"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = column_ifexists(\"clientip_s\""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "clientip_s)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "column_ifexists(\"originalhost_s\""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "host_s)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "url = requesturi_s"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "httpstatus = column_ifexists(\"httpstatusdetails_s\""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "httpstatus_d)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "column_ifexists(\"transactionid_g\""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = userAgent_s, SourceIP = column_ifexists(\"clientIp_s\",clientIP_s), Type, column_ifexists(\"originalHost_s\",host_s), Url = requestUri_s, HttpStatus = column_ifexists(\"httpStatusDetails_s\",httpStatus_d), column_ifexists(\"transactionId_g\",trackingReference_s), ruleName_s, ResourceType, ResourceId",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "trackingreference_s)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = csUserAgent, SourceIP = cIP, Account = csUserName, Type, sSiteName, csMethod, Url = csUriStem",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "useragent = csuseragent"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = csUserAgent, SourceIP = cIP, Account = csUserName, Type, sSiteName, csMethod, Url = csUriStem",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = cip"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = csUserAgent, SourceIP = cIP, Account = csUserName, Type, sSiteName, csMethod, Url = csUriStem",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = csusername"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent = csUserAgent, SourceIP = cIP, Account = csUserName, Type, sSiteName, csMethod, Url = csUriStem",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "url = csuristem"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = SourceIpAddress, Account = UserIdentityUserName, Type, EventName",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = sourceipaddress"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = SourceIpAddress, Account = UserIdentityUserName, Type, EventName",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = useridentityusername"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail),    AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = ipaddress"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail),    AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = userprincipalname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail),    AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "operation = operationname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail),    AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "tostring(locationdetails)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail),    AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "tostring(devicedetail)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail), AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = ipaddress"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail), AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = userprincipalname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail), AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "operation = operationname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail), AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "tostring(locationdetails)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by UserAgent, SourceIP = IPAddress, Account = UserPrincipalName, Type, Operation = OperationName, tostring(LocationDetails), tostring(DeviceDetail), AppDisplayName, ClientAppUsed",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "tostring(devicedetail)"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by HttpUserAgent, SourceIP = SrcIpAddr, DstIpAddr, Account = SrcUsername, Url, Type",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "sourceip = srcipaddr"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated) by HttpUserAgent, SourceIP = SrcIpAddr, DstIpAddr, Account = SrcUsername, Url, Type",
+    "detection": "useragentsearch-log4j.yaml",
+    "field": "account = srcusername"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize OutcomeCount=count() by bin(TimeGenerated, 10m), Account, IpAddress, Computer, Outcome",
+    "detection": "multiplefailedfollowedbysuccess.yaml",
+    "field": "bin(timegenerated"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize OutcomeCount=count() by bin(TimeGenerated, 10m), Account, IpAddress, Computer, Outcome",
+    "detection": "multiplefailedfollowedbysuccess.yaml",
+    "field": "10m)"
+  },
+  {
+    "type": "EXTEND",
+    "line": "| extend SessionStartedUtc = row_window_session(TimeGenerated, timeRange, authenticationWindow, Account != prev(Account) or prev(Outcome) == \"Success\")",
+    "detection": "multiplefailedfollowedbysuccess.yaml",
+    "field": "account !"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName, NewProcessName,",
+    "detection": "malware-in-recyclebin.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, Computer, Account = SubjectUserName, AccountDomain = SubjectDomainName, NewProcessName,",
+    "detection": "malware-in-recyclebin.yaml",
+    "field": ""
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, InitiatedByUser , Operation = OperationName , CorrelationId, IPAddress, Category, Source = SourceSystem , AADTenantId, Type",
+    "detection": "mfadisable.yaml",
+    "field": "user = targetuser"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, InitiatedByUser , Operation = OperationName , CorrelationId, IPAddress, Category, Source = SourceSystem , AADTenantId, Type",
+    "detection": "mfadisable.yaml",
+    "field": "operation = operationname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, InitiatedByUser , Operation = OperationName , CorrelationId, IPAddress, Category, Source = SourceSystem , AADTenantId, Type",
+    "detection": "mfadisable.yaml",
+    "field": "source = sourcesystem"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, Source = EventSource , Operation = EventName , TenantorInstance_Detail = InstanceProfileName, IPAddress = SourceIpAddress",
+    "detection": "mfadisable.yaml",
+    "field": "user = targetuser"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, Source = EventSource , Operation = EventName , TenantorInstance_Detail = InstanceProfileName, IPAddress = SourceIpAddress",
+    "detection": "mfadisable.yaml",
+    "field": "source = eventsource"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, Source = EventSource , Operation = EventName , TenantorInstance_Detail = InstanceProfileName, IPAddress = SourceIpAddress",
+    "detection": "mfadisable.yaml",
+    "field": "operation = eventname"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, Source = EventSource , Operation = EventName , TenantorInstance_Detail = InstanceProfileName, IPAddress = SourceIpAddress",
+    "detection": "mfadisable.yaml",
+    "field": "tenantorinstance_detail = instanceprofilename"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by User = TargetUser, Source = EventSource , Operation = EventName , TenantorInstance_Detail = InstanceProfileName, IPAddress = SourceIpAddress",
+    "detection": "mfadisable.yaml",
+    "field": "ipaddress = sourceipaddress"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project CommonSecurityLog_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore, EmailSenderName, EmailRecipient,",
+    "detection": "emailentity-paloalto.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project AccountRemoved_GroupRemovedFrom_RemovingAccount, AccountRemovedTime = TimeGenerated, Computer, AccountRemoved = tolower(AccountRemoved),",
+    "detection": "useraccountadd-removed.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project AccountRemoved_GroupRemovedFrom_RemovingAccount, AccountRemovedTime = TimeGenerated, Computer, AccountRemoved = tolower(AccountRemoved),",
+    "detection": "useraccountadd-removed.yaml",
+    "field": ""
+  },
+  {
+    "type": "EXTEND",
+    "line": "  | extend PA_Url = iif(PA_Url !startswith \"http://\" and ApplicationProtocol !~ \"ssl\", strcat('http://', PA_Url), iif(PA_Url !startswith \"https://\" and ApplicationProtocol =~ \"ssl\", strcat('https://', PA_Url), PA_Url))",
+    "detection": "urlentity-paloalto.yaml",
+    "field": "iif(pa_url !startswith \"https://\" and applicationprotocol"
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project SecurityEvent_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore,",
+    "detection": "filehashentity-securityevent.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project creationTime = TimeGenerated, CreateEventID = EventID, CreateActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project creationTime = TimeGenerated, CreateEventID = EventID, CreateActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project deletionTime = TimeGenerated, DeleteEventID = EventID, DeleteActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "    | project deletionTime = TimeGenerated, DeleteEventID = EventID, DeleteActivity = Activity, Computer = toupper(Computer),",
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeDelta, creationTime, CreateEventID, CreateActivity, Computer, TargetAccount, TargetSid, UserPrincipalName, AccountUsedToCreate, SIDofAccountUsedToCreate,",
+    "detection": "useraccountcreateddeleted-10m.yaml",
+    "field": ""
+  },
+  {
+    "type": "PROJECT",
+    "line": "| project TimeGenerated, FileName, Directory, HostName, DnsDomain;",
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "field": "dnsdomain;"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), StartTime=min(TimeGenerated), EndTime=max(TimeGenerated), RequestUserAgents=make_set(csUserAgent), ReqestMethods=make_set(csMethod), RequestStatusCodes=make_set(scStatus), RequestCookies=make_set(csCookie), RequestReferers=make_set(csReferer), RequestQueryStrings=make_set(csUriQuery) by AttackerIP=cIP, SiteName=sSiteName, ShellLocation=csUriStem, tostring(FileName), HostName",
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "field": "attackerip=cip"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), StartTime=min(TimeGenerated), EndTime=max(TimeGenerated), RequestUserAgents=make_set(csUserAgent), ReqestMethods=make_set(csMethod), RequestStatusCodes=make_set(scStatus), RequestCookies=make_set(csCookie), RequestReferers=make_set(csReferer), RequestQueryStrings=make_set(csUriQuery) by AttackerIP=cIP, SiteName=sSiteName, ShellLocation=csUriStem, tostring(FileName), HostName",
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "field": "sitename=ssitename"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), StartTime=min(TimeGenerated), EndTime=max(TimeGenerated), RequestUserAgents=make_set(csUserAgent), ReqestMethods=make_set(csMethod), RequestStatusCodes=make_set(scStatus), RequestCookies=make_set(csCookie), RequestReferers=make_set(csReferer), RequestQueryStrings=make_set(csUriQuery) by AttackerIP=cIP, SiteName=sSiteName, ShellLocation=csUriStem, tostring(FileName), HostName",
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "field": "shelllocation=csuristem"
+  },
+  {
+    "type": "SUMMARY",
+    "line": "| summarize count(), StartTime=min(TimeGenerated), EndTime=max(TimeGenerated), RequestUserAgents=make_set(csUserAgent), ReqestMethods=make_set(csMethod), RequestStatusCodes=make_set(scStatus), RequestCookies=make_set(csCookie), RequestReferers=make_set(csReferer), RequestQueryStrings=make_set(csUriQuery) by AttackerIP=cIP, SiteName=sSiteName, ShellLocation=csUriStem, tostring(FileName), HostName",
+    "detection": "maliciousalertlinkedwebrequests.yaml",
+    "field": "tostring(filename)"
+  }
+]

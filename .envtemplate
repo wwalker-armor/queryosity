@@ -1,0 +1,2 @@
+SENTINEL_RULES = "User/local/path/to/siem-rule-library/rules/sentinel-rules"
+# OUTPUT_DIR = "exploration"
